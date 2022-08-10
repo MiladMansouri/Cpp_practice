@@ -20,8 +20,10 @@ int main()
     newObj.display();
 
     Mystring newObj2 = larry + milad;
-
     newObj2.display();
+
+    milad = -milad;
+    milad.display();
 
     return 0;
 }
