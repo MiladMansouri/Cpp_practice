@@ -27,7 +27,11 @@ Mystring::Mystring(const Mystring &source) : str{nullptr}
     str = new char[std::strlen(source.str) + 1];
     std::strcpy(str, source.str);
 }
-
+Mystring::Mystring(Mystring &&source)
+    : str{source.str}
+{
+    source.str = nullptr;
+}
 Mystring::~Mystring()
 {
     delete str;
@@ -35,7 +39,7 @@ Mystring::~Mystring()
 
 void Mystring::display() const
 {
-    std::cout << str << ":" << getLenght() << std::endl;
+    std::cout << this->str << ":" << getLenght() << std::endl;
 }
 
 int Mystring::getLenght() const
@@ -54,4 +58,43 @@ Mystring &Mystring::operator=(const Mystring &rhs)
     str = new char[std::strlen((rhs.str) + 1)];
     std::strcpy(str, rhs.str);
     return *this;
+}
+
+Mystring &Mystring::operator=(Mystring &&rhs)
+{
+    std::cout << "Move assignment" << std::endl;
+    if (this == &rhs) // self assignment
+        return *this;
+    delete[] str;
+    str = rhs.str;
+    rhs.str = nullptr;
+    return *this;
+}
+
+bool Mystring::operator==(const Mystring &rhs) const
+{
+    return (std::strcmp(this->str, rhs.str) == 0);
+}
+
+Mystring Mystring::operator-() const
+{
+    char *buff = new char[std::strlen(str) + 1];
+    std::strcpy(buff, str);
+    for (size_t i = 0; i < std::strlen(buff); i++)
+    {
+        buff[i] = std::tolower(buff[i]);
+    }
+    Mystring temp{buff};
+    delete[] buff;
+    return temp;
+}
+
+Mystring Mystring::operator+(const Mystring &rhs) const
+{
+    char *buff = new char[std::strlen(this->str) + std::strlen(rhs.str) + 1];
+    std::strcpy(buff, this->str);
+    std::strcat(buff, rhs.str);
+    Mystring temp{buff};
+    delete[] buff;
+    return temp;
 }

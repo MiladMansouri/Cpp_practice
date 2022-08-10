@@ -5,11 +5,23 @@ using namespace std;
 
 int main()
 {
+    std::cout << "start\r\n";
+    // Mystring a("Hello");
+    // a = Mystring("hi");
+    // a = "bonjour"; // move assignemet (r_value)
 
-    Mystring a("Hello");
-    Mystring b;
+    Mystring larry{"Larry"};
+    Mystring milad{"MILAD"};
 
-    b = a;
+    cout << (larry == milad) << endl;
+    cout << (larry == larry) << endl;
+
+    Mystring newObj = -milad;
+    newObj.display();
+
+    Mystring newObj2 = larry + milad;
+
+    newObj2.display();
 
     return 0;
-} 
+}
