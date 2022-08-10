@@ -2,8 +2,6 @@
 #include <cstring>
 #include <iostream>
 
-int Mystring::a{1};
-
 Mystring::Mystring() : str{nullptr}
 {
     str = new char[1];

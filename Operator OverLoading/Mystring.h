@@ -4,7 +4,6 @@
 class Mystring
 {
 private:
-    static int a;
     char *str;
 
 public:
@@ -14,7 +13,7 @@ public:
     ~Mystring();
 
     Mystring &operator=(const Mystring &rhs);
-    
+
     void display() const;
     int getLenght() const;
     const char *getStr() const;
