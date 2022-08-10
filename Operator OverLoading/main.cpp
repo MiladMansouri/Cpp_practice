@@ -25,5 +25,20 @@ int main()
     milad = -milad;
     milad.display();
 
+    Mystring obj3{"larry"};
+    Mystring obj4{"Milad"};
+    Mystring obj5;
+
+    cout << "Enter the third stooges first name:";
+    cin >> obj5;
+
+    cout << "The three stiiges are " << obj3 << "," << obj4 << ",and " << obj5;
+
+    cout << "\nEnter the three stooges names sperated by spase:" << endl;
+
+    cin >> obj3 >> obj4 >> obj5;
+
+    cout << "The three stooges are " << obj3 << " " << obj4 << " " << obj5;
+
     return 0;
 }

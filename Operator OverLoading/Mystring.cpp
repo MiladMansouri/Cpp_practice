@@ -98,9 +98,7 @@ Mystring Mystring::operator+(const Mystring &rhs) const
     delete[] buff;
     return temp;
 }
-
 // globla operator function
-
 bool operator==(const Mystring &lhs, const Mystring &rhs)
 {
     return (std::strcmp(lhs.str, rhs.str) == 0);
@@ -128,4 +126,19 @@ Mystring operator+(const Mystring &lhs, const Mystring &rhs)
     Mystring temp{buff};
     delete[] buff;
     return temp;
+}
+
+std::ostream &operator<<(std::ostream &os, const Mystring &rhs)
+{
+    os << rhs.str;
+    return os;
+}
+
+std::istream &operator>>(std::istream &in, Mystring &rhs)
+{
+    char *buff = new char[1000];
+    in >> buff;
+    rhs = Mystring(buff);
+    delete[] buff;
+    return in;
 }
