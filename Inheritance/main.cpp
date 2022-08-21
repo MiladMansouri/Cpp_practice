@@ -1,11 +1,17 @@
 #include <iostream>
 #include <vector>
-#include "savingAccount.h"
-#include "accountUtil.h"
 
-#include "account.cpp"
-#include "savingAccount.cpp"
-#include "accountUtil.cpp"
+#include "Base_Account/account.h"
+#include "Checking_Account/CheckingAccount.h"
+#include "Saving_Accounts/savingAccount.h"
+#include "Trust_Account/TrustAccount.h"
+#include "Util/accountUtil.h"
+
+#include "Base_Account/account.cpp"
+#include "Checking_Account/CheckingAccount.cpp"
+#include "Saving_Accounts/savingAccount.cpp"
+#include "Trust_Account/TrustAccount.cpp"
+#include "Util/accountUtil.cpp"
 
 using namespace std;
 int main(void)
