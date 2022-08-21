@@ -1,5 +1,4 @@
 #include "Complex.h"
-#include "Complex.cpp"
 #include <string>
 #include <ostream>
 using namespace std;
