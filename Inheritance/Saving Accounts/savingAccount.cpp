@@ -1,10 +1,10 @@
 #include "savingAccount.h"
 
-SavingAccount::SavingAccount(std::string name = def_name,
-                             double balance = def_balance, double intRate = def_int_rate) : Account{name, balance}, intRate{intRate}
+SavingAccount::SavingAccount(std::string name,
+                             double balance, double intRate) : Account{name, balance}, intRate{intRate}
 {
     std::cout << this << "Saving Account Constructor Called!" << std::endl;
-} 
+}
 
 SavingAccount::~SavingAccount()
 {
